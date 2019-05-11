@@ -44,7 +44,7 @@ sleep 5
 unset GOOGLE_PLATFORM
 
 # Apply the new config.guess and config.sub now so they're not patched
-cp ../config.guess ../config.sub .
+#cp ../config.guess ../config.sub .
     
 ./configure --host=$HOST --disable-lastlog --disable-utmp --disable-wtmp --disable-utmpx --disable-zlib --disable-syslog > /dev/null 2>&1
 
