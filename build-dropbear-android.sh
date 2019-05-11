@@ -64,7 +64,7 @@ echo "Compiling for ARM"
 
 cd dropbear
     
-./configure --host=$HOST --disable-utmp --disable-wtmp --disable-utmpx --disable-zlib --disable-syslog
+./configure --host=$HOST --disable-utmp --disable-wtmp --disable-utmpx --disable-zlib --disable-syslog --disable-lastlog
 
 make PROGRAMS="$PROGRAMS"
 MAKE_SUCCESS=$?
