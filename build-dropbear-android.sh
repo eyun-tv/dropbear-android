@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 __dirname=$(realpath $(cd "$(dirname "$0")"; pwd))
+cd $__dirname
 
-source $__dirname/export.sh
-
+source ./export.sh
 
 if [ -z ${TOOLCHAIN} ]; then echo "TOOLCHAIN must be set. See README.md for more information."; exit -1; fi
 
@@ -14,9 +14,9 @@ export PROGRAMS="dropbear dropbearkey"
 # Which version of Dropbear to download for patching
 
 # Download the latest version of dropbear SSH
-#if [ ! -f ./dropbear-$VERSION.tar.bz2 ]; then
-#    wget -O ./dropbear-$VERSION.tar.bz2 https://matt.ucc.asn.au/dropbear/releases/dropbear-$VERSION.tar.bz2
-#fi
+if [ ! -d ./dropbear ]; then
+git clone https://github.com/eyun-tv/dropbear.git --depth=1
+fi
 
 # Start each build with a fresh source copy
 #rm -rf ./dropbear-$VERSION
